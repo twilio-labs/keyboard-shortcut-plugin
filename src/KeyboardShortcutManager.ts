@@ -1,3 +1,4 @@
+import { AppState } from "./states/index";
 import { Flex } from "@twilio/flex-ui/src/FlexGlobal";
 import { Actions } from './states/KeyboardShortcutState';
 
@@ -21,7 +22,8 @@ class KeyboardShortcutManager {
     }
 
     public toggleGuide() {
-        if(this.manager.store.getState()['keyboard-shortcut-plugin'].keyboardShortcut.isGuideModalOpen) {
+        const state = this.manager.store.getState() as AppState;
+        if(state['keyboard-shortcut-plugin'].keyboardShortcut.isGuideModalOpen) {
             this.manager.store.dispatch(Actions.closeGuideModal())
         } else {
             this.manager.store.dispatch(Actions.openGuideModal())
