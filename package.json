@@ -14,6 +14,7 @@
   },
   "devDependencies": {
     "@twilio/flex-ui": "2.0.0-alpha.14",
+    "prettier": "^2.6.0",
     "react-test-renderer": "^17.0.2",
     "typescript": "^4"
   }

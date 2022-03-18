@@ -1,13 +1,13 @@
-import { AppState } from '../../states';
-import { connect } from 'react-redux';
-import { bindActionCreators, Dispatch } from 'redux';
+import { AppState } from "../../states";
+import { connect } from "react-redux";
+import { bindActionCreators, Dispatch } from "redux";
 
-import { Actions, PressedKeys } from '../../states/KeyboardShortcutState';
-import KeyboardShortcut from './KeyboardShortcut';
+import { Actions, PressedKeys } from "../../states/KeyboardShortcutState";
+import KeyboardShortcut from "./KeyboardShortcut";
 
 export interface StateToProps {
-  pressedKeys: PressedKeys;
-  isGuideModalOpen: boolean;
+    pressedKeys: PressedKeys;
+    isGuideModalOpen: boolean;
 }
 
 export interface DispatchToProps {
@@ -17,14 +17,14 @@ export interface DispatchToProps {
 }
 
 const mapStateToProps = (state: AppState): StateToProps => ({
-  pressedKeys: state['keyboard-shortcut-plugin'].keyboardShortcut.pressedKeys,
-  isGuideModalOpen: state['keyboard-shortcut-plugin'].keyboardShortcut.isGuideModalOpen
+    pressedKeys: state["keyboard-shortcut-plugin"].keyboardShortcut.pressedKeys,
+    isGuideModalOpen: state["keyboard-shortcut-plugin"].keyboardShortcut.isGuideModalOpen
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<any>): DispatchToProps => ({
-  updatePressedKeys: bindActionCreators(Actions.updatePressedKeys, dispatch),
-  openGuideModal: bindActionCreators(Actions.openGuideModal, dispatch),
-  closeGuideModal: bindActionCreators(Actions.closeGuideModal, dispatch),
+    updatePressedKeys: bindActionCreators(Actions.updatePressedKeys, dispatch),
+    openGuideModal: bindActionCreators(Actions.openGuideModal, dispatch),
+    closeGuideModal: bindActionCreators(Actions.closeGuideModal, dispatch)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(KeyboardShortcut);
