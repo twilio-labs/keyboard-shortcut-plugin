@@ -8,7 +8,7 @@
   "dependencies": {
     "@emotion/react": "^11.8.2",
     "@material-ui/core": "^4.12.3",
-    "@twilio/flex-plugin-scripts": "5.0.4",
+    "@twilio/flex-plugin-scripts": "6.2.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
